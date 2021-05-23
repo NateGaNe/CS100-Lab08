@@ -22,10 +22,23 @@ class Mult : public Base {
 		return temp;
 	}
 	virtual int number_of_children(){
-		return -1;
+		int count = 0;
+		if(left != nullptr){
+			count += 1;
+		}
+		if(right != nullptr){
+			count += 1;
+		}
+		return count;
         }
         virtual Base* get_child(int i){
-                return nullptr;
+                if(i == 0){
+			return left;
+		}
+		else if(i == 1){
+			return right;
+		}
+		return nullptr;
         }
         virtual void accept(Visitor* visitor, int index){
 		if(index = 0){
