@@ -6,7 +6,7 @@
 
 class Mult : public Base {
     public:
-	Mult(Base* firstOp, Base* secondOp) : Base() {
+	Mult(Base* firstOp, Base* secondOp) : Base(firstOp, secondOp) {
 		firstn = firstOp->evaluate();
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
