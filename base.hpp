@@ -6,7 +6,10 @@
 class Base {
     public:
         /* Constructors */
-        Base() { }
+        Base(left, right) {
+		this->left = left;
+		this->right = right;
+	}
 
         virtual ~Base() {}
     
