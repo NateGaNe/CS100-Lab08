@@ -1,7 +1,13 @@
 #ifndef VISITORLATEX_HPP
 #define VISITORLATEX_HPP
 #include "visitor.hpp"
-
+#include "add.hpp"
+#include "div.hpp"
+#include "mult.hpp"
+#include "op.hpp"
+#include "pow.hpp"
+#include "sub.hpp"
+#include "base.hpp"
 class VisitorLaTeX public:Visitor {
 public:
 	std::string PrintLaTeX(Base* ptr) {
