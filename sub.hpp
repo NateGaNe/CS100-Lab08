@@ -48,7 +48,7 @@ class Sub : public Base{
                 	else if(index == 1){
                         	visitor->visit_sub_middle(this);
                 	}
-                	else if(index -= 2){
+                	else if(index == 2){
                         	visitor->visit_sub_end(this);
                 	}
         	}
