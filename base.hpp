@@ -6,7 +6,7 @@
 class Base {
     public:
         /* Constructors */
-        Base(left, right) {
+        Base(Base* left,Base* right) {
 		this->left = left;
 		this->right = right;
 	}
