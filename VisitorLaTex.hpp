@@ -12,16 +12,16 @@ class VisitorLaTeX public:Visitor {
 public:
 	std::string PrintLaTeX(Base* ptr) {
 		outputString += "$";
-		Iterator iteration(node);
+		Iterator iteration(ptr);
 		while (!iteration.is_done()){
-			iteration.current_node()->accept(this,iteration.current_index())};
+			iteration.current_node()->accept(this,iteration.current_index());
 			iteration.next();
 		{
 		outputString += "$";
 		return outputString;
 	}
 	virtual void visit_op(Op* node) (outputString += "{" + node->stringify() + "}";}
-	virtual void visit_rand(Rand* node) {outputString += "{" + node->stringify() + "}";)
+	virtual void visit_rand(Rand* node) {outputString += "{" + node->stringify() + "}";}
         virtual void visit_add_begin(Add* node){outputString += "(";}
         virtual void visit_add_middle(Add* node) {outputString += "+";}
         virtual void visit_add_end(Add* node){outputString += ")";}
