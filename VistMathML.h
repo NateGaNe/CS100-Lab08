@@ -3,6 +3,12 @@
 
 #include "visitor.hpp"
 #include "base.hpp"
+#include "add.hpp"
+#include "sub.hpp"
+#include "op.hpp"
+#include "mult.hpp"
+#include "div.hpp"
+#include "pow.hpp"
 
 class VisitMathML : public Visitor{
 	public:
