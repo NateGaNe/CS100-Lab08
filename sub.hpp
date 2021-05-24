@@ -4,7 +4,7 @@
 using namespace std;
 class Sub : public Base{
         public:
-                Sub(Base* firstNum, Base* secondNum) : Base() {
+                Sub(Base* firstNum, Base* secondNum) : Base(firstNum, secondNum) {
                         firstString = firstNum -> stringify();
                         secondString = secondNum -> stringify();
                         firstNumber = firstNum -> evaluate();
