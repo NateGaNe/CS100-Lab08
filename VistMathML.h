@@ -12,13 +12,13 @@
 
 class VisitMathML : public Visitor{
 	public:
-		virtual void visit_op(Op* node) { outputString += "<cn>" + node->stringifly + "</cn>"; }
-        	virtual void visit_rand(Rand* node)  { outputString += "<cn>" + node->stringifly + "</cn>"; }
+		virtual void visit_op(Op* node) { outputString += "<cn>" + node->stringify() + "</cn>"; }
+        	virtual void visit_rand(Rand* node)  { outputString += "<cn>" + node->stringify() + "</cn>"; }
 		virtual void visit_add_begin(Add* node) { outputString += "<apply>\n" + indent + "  <plus/>\n";}
         	virtual void visit_add_middle(Add* node) { outputString += "\n"; }
         	virtual void visit_add_end(Add* node) { outputString += "</apply>\n"; }
-        	virtual void visit_sub_begin(Sub* node) { outputString += "<apply>\n"+ indent + "  <minus/>\n" }
-        	virtual void visit_sub_middle(Sub* node) { outputString += "\n" }
+        	virtual void visit_sub_begin(Sub* node) { outputString += "<apply>\n"+ indent + "  <minus/>\n"; }
+        	virtual void visit_sub_middle(Sub* node) { outputString += "\n"; }
         	virtual void visit_sub_end(Sub* node) { outputString += "</apply>\n"; }
         	virtual void visit_mult_begin(Mult* node) { outputString += "<apply>\n" + indent + "  <times/>\n"; }
         	virtual void visit_mult_middle(Mult* node) { outputString += "\n"; }
@@ -34,19 +34,19 @@ class VisitMathML : public Visitor{
 			Iterator iteration(ptr);
 			int count = 1;
 			while(!iteration.is_done()){
-				if(iteration.current_index != 3){
+				if(iteration.current_index() != 3){
 					count++;
 				}
 				
-				printIdent(count);
+				printIndet(count);
 				outputString += indent;
 				iteration.current_node()->accept(this, iteration.current_index());
-				if(iteration.current_index == 3){
+				if(iteration.current_index() == 3){
 					count = count - 1;
 				}
 				iteration.next();
 			}
-			outputString += "</math>"
+			outputString += "</math>";
 			return outputString;
 		}
 	private:
@@ -58,4 +58,5 @@ class VisitMathML : public Visitor{
 				indent += "  ";
 			}
 		}
-}
+};
+#endif
