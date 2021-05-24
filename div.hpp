@@ -6,7 +6,7 @@
 
 class Div : public Base {
     public:
-	Div(Base* firstOp, Base* secondOp) : Base() {
+	Div(Base* firstOp, Base* secondOp) : Base(firstOp, secondOp) {
 		firstn = firstOp->evaluate();
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
