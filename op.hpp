@@ -13,7 +13,7 @@ class Op : public Base {
 		return nullptr;
 	}
         virtual void accept(Visitor* visitor, int index){
-		visit_op(this);
+		visitor->visit_op(this);
 	}
     private:
 	double value;
