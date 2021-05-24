@@ -1,5 +1,6 @@
 #ifndef VISITORLATEX_HPP
 #define VISITORLATEX_HPP
+#include "visitor.hpp"
 
 class VisitorLaTeX public:Visitor {
 public:
