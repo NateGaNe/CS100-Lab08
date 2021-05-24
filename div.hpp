@@ -52,7 +52,7 @@ class Div : public Base {
 			visitor->visit_div_middle(this);
 		}
 		else if(index == 2){
-			visitor->vist_div_end(this);
+			visitor->visit_div_end(this);
 		}
 	}
 
