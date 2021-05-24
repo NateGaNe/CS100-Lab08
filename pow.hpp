@@ -5,7 +5,7 @@
 using namespace std;
 class Pow : public Base{
         public:
-                Pow(Base* firstNum, Base* secondNum) : Base() {
+                Pow(Base* firstNum, Base* secondNum) : Base(firstNum, secondNum) {
                         firstString = firstNum -> stringify();
                         secondString = secondNum -> stringify();
                         firstNumber = firstNum -> evaluate();
