@@ -9,8 +9,6 @@ class Add : public Base{
 			secondString = secondNum -> stringify();
 			firstNumber = firstNum -> evaluate();
 			secondNumber = secondNum -> evaluate();
-			delete firstNum;
-			delete secondNum;	
 		}
                 virtual string stringify() {
                         string temp2 = "(" + firstString + ") + ("  + secondString + ")";

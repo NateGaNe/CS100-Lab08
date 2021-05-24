@@ -11,8 +11,6 @@ class Sub : public Base{
                         secondString = secondNum -> stringify();
                         firstNumber = firstNum -> evaluate();
                         secondNumber = secondNum -> evaluate();
-			delete firstNum;
-			delete secondNum;
                 }
                 virtual string stringify() {
                         string temp2 = "(" + firstString + ") - ("  + secondString + ")";
@@ -44,13 +42,13 @@ class Sub : public Base{
                 	return nullptr;
         	}
         	virtual void accept(Visitor* visitor, int index){
-                	if(index = 0){
+                	if(index == 0){
                         	visitor->visit_sub_begin(this);
                 	}
-                	else if(index = 1){
+                	else if(index == 1){
                         	visitor->visit_sub_middle(this);
                 	}
-                	else if(index = 2){
+                	else if(index -= 2){
                         	visitor->visit_sub_end(this);
                 	}
         	}

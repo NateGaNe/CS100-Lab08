@@ -12,8 +12,6 @@ class Div : public Base {
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
 		seconds = secondOp->stringify();
-		delete firstOp;
-		delete secondOp;
 	}
 	
 	virtual double evaluate(){

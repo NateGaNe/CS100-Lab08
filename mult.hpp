@@ -13,8 +13,8 @@ class Mult : public Base {
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
 		seconds = secondOp->stringify();
-		delete firstOp;
-		delete secondOp;	
+		//delete firstOp;
+		//delete secondOp;	
 	}
 	virtual double evaluate(){
 		return firstn * secondn;
@@ -44,13 +44,13 @@ class Mult : public Base {
 		return nullptr;
         }
         virtual void accept(Visitor* visitor, int index){
-		if(index = 0){
+		if(index == 0){
                 	visitor->visit_mult_begin(this);
                	}
-                else if(index = 1){
+                else if(index == 1){
                      	visitor->visit_mult_middle(this);
                	}
-               	else if(index = 2){
+               	else if(index == 2){
                   	visitor->visit_mult_end(this);
                 }
 	}
