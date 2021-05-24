@@ -5,7 +5,7 @@
 
 class Rand: public Base {
     public:
-	Rand(): Base(){ value = rand() % 100; }
+	Rand(): Base(nullptr, nullptr){ value = rand() % 100; }
 	virtual double evaluate() { return value; }
 	virtual std::string stringify() { return std::to_string(value); }
 	virtual int number_of_children(){
