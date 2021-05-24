@@ -5,6 +5,7 @@
 
 class Op : public Base {
     public:
+
         Op(double inp) : Base(nullptr, nullptr) {value = inp; }
         virtual double evaluate() { return value; }
         virtual std::string stringify() { return std::to_string(value); }
@@ -15,6 +16,7 @@ class Op : public Base {
         virtual void accept(Visitor* visitor, int index){
 		visitor->visit_op(this);
 	}
+
     private:
 	double value;
 };

@@ -1,6 +1,6 @@
 #ifndef __BASE_HPP__
 #define __BASE_HPP__
-
+#include "visitor.hpp"
 #include <string>
 
 class Base {
@@ -11,11 +11,13 @@ class Base {
 		this->right = right;
 	}
 
+
         virtual ~Base() {}
     
         /* Pure Virtual Functions */
         virtual double evaluate() = 0;
         virtual std::string stringify() = 0;
+
 	virtual int number_of_children();
 	virtual Base* get_child(int i);
    protected:

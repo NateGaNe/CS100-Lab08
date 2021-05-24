@@ -7,6 +7,7 @@
 class Div : public Base {
     public:
 	Div(Base* firstOp, Base* secondOp) : Base(firstOp, secondOp) {
+
 		firstn = firstOp->evaluate();
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
@@ -23,6 +24,7 @@ class Div : public Base {
 		std::string temp = "(" + firsts + ") / (" + seconds + ")";
 		return temp;
 	}
+
 	virtual int number_of_children(){
 		int count = 0;
 		if(left != nullptr){

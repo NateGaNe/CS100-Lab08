@@ -5,7 +5,9 @@
 using namespace std;
 class Pow : public Base{
         public:
+
                 Pow(Base* firstNum, Base* secondNum) : Base(firstNum, secondNum) {
+
                         firstString = firstNum -> stringify();
                         secondString = secondNum -> stringify();
                         firstNumber = firstNum -> evaluate();
@@ -22,6 +24,7 @@ class Pow : public Base{
                         double temp = pow(firstNumber,secondNumber);
                         return temp;
                 }
+
 
 		virtual int number_of_children(){
                 	int count = 0;
@@ -53,6 +56,7 @@ class Pow : public Base{
                         	visitor->visit_pow_end(this);
                 	}
         	}
+
         private:
                 double firstNumber;
                 double secondNumber;

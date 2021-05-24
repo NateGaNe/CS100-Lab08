@@ -4,7 +4,9 @@
 using namespace std;
 class Sub : public Base{
         public:
+
                 Sub(Base* firstNum, Base* secondNum) : Base(firstNum, secondNum) {
+
                         firstString = firstNum -> stringify();
                         secondString = secondNum -> stringify();
                         firstNumber = firstNum -> evaluate();
@@ -21,6 +23,7 @@ class Sub : public Base{
                         double temp = firstNumber - secondNumber;
                         return temp;
                 }
+
 		virtual int number_of_children(){
                 	int count = 0;
                 	if(left != nullptr){
@@ -51,6 +54,7 @@ class Sub : public Base{
                         	visitor->visit_sub_end(this);
                 	}
         	}
+
         private:
                 double firstNumber;
                 double secondNumber;
