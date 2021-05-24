@@ -4,7 +4,7 @@
 using namespace std;
 class Add : public Base{
 	public:
-		Add(Base* firstNum, Base* secondNum) : Base() {
+		Add(Base* firstNum, Base* secondNum) : Base(firstNum, secondNum) {
 			firstString = firstNum -> stringify();
 			secondString = secondNum -> stringify();
 			firstNumber = firstNum -> evaluate();
