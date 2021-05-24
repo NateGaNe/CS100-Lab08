@@ -5,9 +5,18 @@
 
 class Op : public Base {
     public:
-        Op(double inp) : Base() {value = inp; }
+
+        Op(double inp) : Base(nullptr, nullptr) {value = inp; }
         virtual double evaluate() { return value; }
         virtual std::string stringify() { return std::to_string(value); }
+    	virtual int number_of_children(){ return 0; }
+        virtual Base* get_child(int i){
+		return nullptr;
+	}
+        virtual void accept(Visitor* visitor, int index){
+		visitor->visit_op(this);
+	}
+
     private:
 	double value;
 };

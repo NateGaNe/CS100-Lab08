@@ -6,7 +6,9 @@
 
 class Mult : public Base {
     public:
-	Mult(Base* firstOp, Base* secondOp) : Base() {
+
+	Mult(Base* firstOp, Base* secondOp) : Base(firstOp, secondOp) {
+
 		firstn = firstOp->evaluate();
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
@@ -21,6 +23,38 @@ class Mult : public Base {
 		std::string temp = "(" + firsts + ") * (" +seconds + ")";
 		return temp;
 	}
+
+	virtual int number_of_children(){
+		int count = 0;
+		if(left != nullptr){
+			count += 1;
+		}
+		if(right != nullptr){
+			count += 1;
+		}
+		return count;
+        }
+        virtual Base* get_child(int i){
+                if(i == 0){
+			return left;
+		}
+		else if(i == 1){
+			return right;
+		}
+		return nullptr;
+        }
+        virtual void accept(Visitor* visitor, int index){
+		if(index = 0){
+                	visitor->visit_mult_begin(this);
+               	}
+                else if(index = 1){
+                     	visitor->visit_mult_middle(this);
+               	}
+               	else if(index = 2){
+                  	visitor->visit_mult_end(this);
+                }
+	}
+
    private:
 	double firstn;
 	double secondn;

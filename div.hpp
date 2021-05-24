@@ -6,7 +6,8 @@
 
 class Div : public Base {
     public:
-	Div(Base* firstOp, Base* secondOp) : Base() {
+	Div(Base* firstOp, Base* secondOp) : Base(firstOp, secondOp) {
+
 		firstn = firstOp->evaluate();
 		secondn = secondOp->evaluate();
 		firsts = firstOp->stringify();
@@ -23,6 +24,38 @@ class Div : public Base {
 		std::string temp = "(" + firsts + ") / (" + seconds + ")";
 		return temp;
 	}
+
+	virtual int number_of_children(){
+		int count = 0;
+		if(left != nullptr){
+			count += 1;
+		}
+		if(right != nullptr){
+			count += 1;
+		}
+		return count;
+	}
+	virtual Base* get_child(int i){
+		if(i == 0){
+			return left;
+		}
+		else if(i == 1){
+			return right;
+		}
+		return nullptr;
+	}
+	virtual void accept(Visitor* visitor, int index){
+		if(index == 0){
+			visitor->visit_div_begin(this);
+		}
+		else if(index == 1){
+			visitor->visit_div_middle(this);
+		}
+		else if(index == 2){
+			visitor->vist_div_end(this);
+		}
+	}
+
     private:
 	double firstn;
 	double secondn;
