@@ -6,7 +6,7 @@
 class Base {
     public:
         /* Constructors */
-        Base(left, right) {
+        Base(Base* left,Base* right) {
 		this->left = left;
 		this->right = right;
 	}
@@ -18,8 +18,8 @@ class Base {
         virtual double evaluate() = 0;
         virtual std::string stringify() = 0;
 
-	virtual int number_of_children();
-	virtual Base* get_child(int i);
+	virtual int number_of_children() = 0;
+	virtual Base* get_child(int i)= 0;
    protected:
 	Base* left;
 	Base* right;
