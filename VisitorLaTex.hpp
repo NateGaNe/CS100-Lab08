@@ -33,9 +33,9 @@ public:
         virtual void visit_mult_begin(Mult* node){outputString += "(";}
         virtual void visit_mult_middle(Mult* node){outputString += "\\cdot";}
         virtual void visit_mult_end(Mult* node){outputString += ")";}
-        virtual void visit_div_begin(Div* node){outputString += "\\frac";}
-        virtual void visit_div_middle(Div* node){outputString += "";}
-        virtual void visit_div_end(Div* node){outputString += "";}
+        virtual void visit_div_begin(Div* node){outputString += "\\frac{";}
+        virtual void visit_div_middle(Div* node){outputString += "}{";}
+        virtual void visit_div_end(Div* node){outputString += "}";}
         virtual void visit_pow_begin(Pow* node){outputString += "(";}
         virtual void visit_pow_middle(Pow* node){outputString += "^";}
         virtual void visit_pow_end(Pow* node){outputString += ")";}
