@@ -13,6 +13,11 @@ class Pow : public Base{
                         firstNumber = firstNum -> evaluate();
                         secondNumber = secondNum -> evaluate();
                 }
+                virtual ~Pow() {
+                        delete left;
+                        delete right;
+                }
+
                 virtual string stringify() {
                         string temp2 = "(" + firstString + ") ** ("  + secondString + ")";
                         return temp2;
