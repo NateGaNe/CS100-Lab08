@@ -27,14 +27,18 @@ int main() {
 	Base* sub = new Sub(five, one);
 	Base* div = new Div (six, eight);
 	Base* pow = new Pow(nine,ten);
-	VisitorLaTeX obj, obj2, obj3, obj4, obj10;
-	VisitMathML obj5, obj6, obj7, obj8, obj9;
+	Base* firstTest = new Add(pow, sub);
+	Base* secondTest = new Mult(firstTest, add);
+	VisitorLaTeX obj, obj2, obj3, obj4, obj10,obj11;
+	VisitMathML obj5, obj6, obj7, obj8, obj9,obj12;
 	std::cout << obj.PrintLaTeX(mult) << std::endl  << obj5.PrintMathML(mult) << std::endl;
         std::cout << obj2.PrintLaTeX(add) << std::endl  << obj6.PrintMathML(add) << std::endl;
         std::cout << obj3.PrintLaTeX(sub) << std::endl  << obj7.PrintMathML(sub) << std::endl;
         std::cout << obj4.PrintLaTeX(div) << std::endl  << obj8.PrintMathML(div) << std::endl;
         std::cout << obj10.PrintLaTeX(pow) << std::endl  << obj9.PrintMathML(pow) << std::endl;
-	
+	std::cout << obj11.PrintLaTeX(secondTest) << std::endl << obj12.PrintMathML(secondTest) << std::endl;
+	delete firstTest;
+	delete secondTest;
 	delete mult;
 	delete sub;
 	delete add;
