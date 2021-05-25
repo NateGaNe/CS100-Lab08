@@ -45,7 +45,7 @@ TEST(LaTest,Frac){
     Base* two = new Op(2);
     Base* div = new Div(four, two);
     VisitorLaTeX test;
-    EXPECT_EQ( test.PrintLaTeX(div), "${\\frac{{4.000000}}{{2.0000000}}}$");
+    EXPECT_EQ( test.PrintLaTeX(div), "${\\frac{{4.000000}}{{2.000000}}}$");
 }
 
 TEST(LaTest, Pow){
