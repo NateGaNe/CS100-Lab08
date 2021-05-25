@@ -10,10 +10,6 @@ class Base {
 		this->left = left;
 		this->right = right;
 	}
-    ~Base(){
-        delete left;
-        delete right;
-    }
 
         virtual ~Base() {}
 	

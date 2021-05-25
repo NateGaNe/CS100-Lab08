@@ -37,12 +37,8 @@ int main() {
         std::cout << obj4.PrintLaTeX(div) << std::endl  << obj8.PrintMathML(div) << std::endl;
         std::cout << obj10.PrintLaTeX(pow) << std::endl  << obj9.PrintMathML(pow) << std::endl;
 	std::cout << obj11.PrintLaTeX(secondTest) << std::endl << obj12.PrintMathML(secondTest) << std::endl;
-	delete firstTest;
 	delete secondTest;
 	delete mult;
-	delete sub;
-	delete add;
 	delete div;
-	delete pow;
     return 0;
 }

@@ -22,8 +22,6 @@ TEST(LaTest, add){
     Base* add = new Add(three, two);
     VisitorLaTeX test;
     EXPECT_EQ( test.PrintLaTeX(add), "${({3.000000}+{2.000000})}$");
-    delete three;
-    delete two;
     delete add;
 }  
 
@@ -33,8 +31,6 @@ TEST(LaTest, sub){
     Base* sub = new Sub(five, four);
     VisitorLaTeX test;
     EXPECT_EQ( test.PrintLaTeX(sub), "${({5.000000}-{4.000000})}$");
-    delete five;
-    delete four;
     delete sub;
 }
 
@@ -44,8 +40,6 @@ TEST(LaTest, mult){
     Base* mult = new Mult(two, four);
     VisitorLaTeX test;
     EXPECT_EQ( test.PrintLaTeX(mult), "${({2.000000}\\cdot{4.000000})}$");
-    delete two;
-    delete four;
     delete mult;
 }
 
@@ -55,8 +49,6 @@ TEST(LaTest,Frac){
     Base* div = new Div(four, two);
     VisitorLaTeX test;
     EXPECT_EQ( test.PrintLaTeX(div), "${\\frac{{4.000000}}{{2.000000}}}$");
-    delete four;
-    delete two;
     delete div;
 }
 
@@ -66,8 +58,6 @@ TEST(LaTest, Pow){
     Base* pow = new Pow(eight, four);
     VisitorLaTeX test;
     EXPECT_EQ( test.PrintLaTeX(pow), "${({8.000000}^{4.000000})}$");
-    delete eight;
-    delete four;
     delete pow;
 }
 
@@ -85,16 +75,6 @@ TEST(LaTest, multiple){
     Base* end = new Mult(add2, add);
     VisitorLaTeX test;
     EXPECT_EQ( test.PrintLaTeX(end), "${((({9.000000}^{10.000000})+({15.000000}-{1.000000}))\\cdot({4.000000}+{5.000000}))}$");
-    delete five;
-    delete ten;
-    delete one;
-    delete four;
-    delete fifteen;
-    delete nine;
-    delete pow;
-    delete sub;
-    delete add;
-    delete add2;
     delete end;
 }
 
