@@ -90,11 +90,13 @@ TEST(MathML, twoFunctions){
 TEST(MathML,moreThanOne){
     Base* two = new Op(2);
     Base* five = new Op(5);
+    Base* four = new Op(4);
+    Base* three = new Op(3);
     Base* mult = new Mult(two, five);
-    Base* pow = new Pow(five, two);
+    Base* pow = new Pow(four, three);
     Base* div = new Div(mult, pow);
     VisitMathML test;
-    EXPECT_EQ( test.PrintMathML(div), "<math>\n  <apply>\n    <divide/>\n    <apply>\n      <times/>\n      <cn>2.000000</cn>\n      <cn>5.000000</cn>\n    </apply>\n    <apply>\n      <power/>\n      <cn>5.000000</cn>\n      <cn>2.000000</cn>\n    </apply>\n  </apply>\n</math>");
+    EXPECT_EQ( test.PrintMathML(div), "<math>\n  <apply>\n    <divide/>\n    <apply>\n      <times/>\n      <cn>2.000000</cn>\n      <cn>5.000000</cn>\n    </apply>\n    <apply>\n      <power/>\n      <cn>4.000000</cn>\n      <cn>3.000000</cn>\n    </apply>\n  </apply>\n</math>");
     delete two;
     delete five;
     delete mult;
