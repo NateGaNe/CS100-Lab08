@@ -64,7 +64,7 @@ TEST(MathML, twoFunctions){
     Base* minus = new Sub(fifteen, thirteen);
     Base* div = new Div(eight, minus);
     VisitMathML test;
-    EXPECT_EQ(test.PrintMathML(div),  "<math>\n  <apply>\n    <plus/>\n    <cn>3.000000</cn>\n    <apply>\n      <minus>\n      <cn>15.000000</cn>\n      <cn>13.000000</cn>\n    </apply>  </apply>\n</math>");
+    EXPECT_EQ(test.PrintMathML(div),  "<math>\n  <apply>\n    <divide/>\n    <cn>8.000000</cn>\n    <apply>\n      <minus/>\n      <cn>15.000000</cn>\n      <cn>13.000000</cn>\n    </apply>\n  </apply>\n</math>");
 }
 
 TEST(MathML,moreThanOne){
@@ -74,7 +74,7 @@ TEST(MathML,moreThanOne){
     Base* pow = new Pow(five, two);
     Base* div = new Div(mult, pow);
     VisitMathML test;
-    EXPECT_EQ( test.PrintMathML(div), "<math>\n  <apply>\n    <divide/>\n    <apply>\n      <times/>\n      <cn>2</cn>\n      <cn>5</cn>\n    </apply>\n    <apply>\n      <power/>\n      <cn>5</cn>\n      <cn>2</cn>\n    </apply>\n  </apply>\n</math>");
+    EXPECT_EQ( test.PrintMathML(div), "<math>\n  <apply>\n    <divide/>\n    <apply>\n      <times/>\n      <cn>2.000000</cn>\n      <cn>5.000000</cn>\n    </apply>\n    <apply>\n      <power/>\n      <cn>5.000000</cn>\n      <cn>2.000000</cn>\n    </apply>\n  </apply>\n</math>");
 }
 
 #endif
