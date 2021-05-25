@@ -1,6 +1,7 @@
 #ifndef VISITMATHML_H
 #define VISITMATHML_H
 
+#include "iterator.hpp"
 #include "visitor.hpp"
 #include "base.hpp"
 #include "add.hpp"
