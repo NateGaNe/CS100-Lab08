@@ -13,13 +13,13 @@ private:
 	std::string outputString;
 public:
 	std::string PrintLaTeX(Base* ptr) {
-		outputString += "$";
+		outputString += "${";
 		Iterator iteration(ptr);
 		while (!iteration.is_done()){
 			iteration.current_node()->accept(this,iteration.current_index());
 			iteration.next();
 		}
-		outputString += "$";
+		outputString += "}$";
 		return outputString;
 	}
 	virtual void visit_op(Op* node) {outputString += "{" + node->stringify() + "}";}

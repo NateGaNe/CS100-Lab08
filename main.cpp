@@ -34,7 +34,7 @@ int main() {
         std::cout << obj3.PrintLaTeX(sub) << std::endl  << obj7.PrintMathML(sub) << std::endl;
         std::cout << obj4.PrintLaTeX(div) << std::endl  << obj8.PrintMathML(div) << std::endl;
         std::cout << obj10.PrintLaTeX(pow) << std::endl  << obj9.PrintMathML(pow) << std::endl;
-
+	
 	delete mult;
 	delete sub;
 	delete add;
