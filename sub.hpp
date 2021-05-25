@@ -12,6 +12,7 @@ class Sub : public Base{
                         firstNumber = firstNum -> evaluate();
                         secondNumber = secondNum -> evaluate();
                 }
+
 		 virtual ~Sub() {
                         delete left;
                         delete right;

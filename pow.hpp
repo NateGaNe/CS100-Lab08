@@ -13,6 +13,7 @@ class Pow : public Base{
                         firstNumber = firstNum -> evaluate();
                         secondNumber = secondNum -> evaluate();
                 }
+
                 virtual ~Pow() {
                         delete left;
                         delete right;

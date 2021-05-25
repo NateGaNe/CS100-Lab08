@@ -13,10 +13,11 @@ class Div : public Base {
 		firsts = firstOp->stringify();
 		seconds = secondOp->stringify();
 	}
-                virtual ~Div() {
-                        delete left;
-                        delete right;
-                }
+
+        virtual ~Div() {
+       		 delete left;
+                 delete right;
+        }
 
 	
 	virtual double evaluate(){

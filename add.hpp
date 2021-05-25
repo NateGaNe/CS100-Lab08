@@ -10,10 +10,12 @@ class Add : public Base{
 			firstNumber = firstNum -> evaluate();
 			secondNumber = secondNum -> evaluate();
 		}
+
 		virtual ~Add() {
 			delete left;	
 			delete right;
-		}	
+		}
+	
                 virtual string stringify() {
                         string temp2 = "(" + firstString + ") + ("  + secondString + ")";
                         return temp2;

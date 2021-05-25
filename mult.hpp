@@ -16,10 +16,11 @@ class Mult : public Base {
 		//delete firstOp;
 		//delete secondOp;	
 	}
-                virtual ~Mult() {
-                        delete left;
-                        delete right;
-                }
+
+        virtual ~Mult() {
+             	 delete left;
+                 delete right;
+        }
 
 	virtual double evaluate(){
 		return firstn * secondn;
