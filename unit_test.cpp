@@ -10,6 +10,7 @@
 //#include "test_multiple_class.hpp"
 //#include "factoryTesting.hpp"
 #include "MathMLTest.hpp"
+#include "LatexTest.hpp"
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
