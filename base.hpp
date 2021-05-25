@@ -13,6 +13,7 @@ class Base {
 
 
         virtual ~Base() {}
+	
     
         /* Pure Virtual Functions */
         virtual double evaluate() = 0;

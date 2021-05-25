@@ -73,15 +73,15 @@ TEST(MathML, twoFunctions){
     delete div;
 }
 
-TEST(MathML,moreThanOne){
-    Base* two = new Op(2);
-    Base* five = new Op(5);
-    Base* mult = new Mult(two, five);
-    Base* pow = new Pow(five, two);
-    Base* div = new Div(mult, pow);
-    VisitMathML test;
-    EXPECT_EQ( test.PrintMathML(div), "<math>\n  <apply>\n    <divide/>\n    <apply>\n      <times/>\n      <cn>2.000000</cn>\n      <cn>5.000000</cn>\n    </apply>\n    <apply>\n      <power/>\n      <cn>5.000000</cn>\n      <cn>2.000000</cn>\n    </apply>\n  </apply>\n</math>");
-    delete div;
-}
+//TEST(MathML,moreThanOne){
+  //  Base* two = new Op(2);
+    //Base* five = new Op(5);
+    //Base* mult = new Mult(two, five);
+    //Base* pow = new Pow(five, two);
+    //Base* div = new Div(mult, pow);
+    //VisitMathML test;
+    //EXPECT_EQ( test.PrintMathML(div), "<math>\n  <apply>\n    <divide/>\n    <apply>\n      <times/>\n      <cn>2.000000</cn>\n      <cn>5.000000</cn>\n    </apply>\n    <apply>\n      <power/>\n      <cn>5.000000</cn>\n      <cn>2.000000</cn>\n    </apply>\n  </apply>\n</math>");
+   // delete div;
+//}
 
 #endif
